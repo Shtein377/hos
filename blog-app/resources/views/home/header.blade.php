@@ -23,6 +23,32 @@
                    <li class="nav-item">
                       <a class="nav-link " href="contact.html">Contact</a>
                    </li>
+                   @if (Route::has('login'))
+
+                   @auth
+
+                   <li>
+                     
+                        <x-app-layout>
+
+                        </x-app-layout>
+
+                     
+                   </li>
+
+                  
+
+                  @else
+
+                   <li class="nav-item">
+                     <a class="nav-link " href="{{route('login')}}">LOGIN</a>
+                  </li>
+                  <li class="nav-item">
+                     <a class="nav-link " href="{{route('register')}}">REGISTER</a>
+                  </li>
+
+                  @endauth
+                  @endif
                 </ul>
              </div>
           </nav>
@@ -35,7 +61,27 @@
                 <li><a href="about.html">About</a></li>
                 <li><a href="services.html">Services</a></li>
                 <li><a href="blog.html">Blog</a></li>
-                <li><a href="contact.html">Contact us</a></li>
+                <li><a href="blog.html">Contact</a></li>
+                @if (Route::has('login'))
+
+                @auth
+                 <li>
+                  <x-app-layout>
+
+                  </x-app-layout>
+
+                 </li>
+               
+
+                @else
+
+
+                <li><a href="{{route('login')}}">LOGIN</a></li>
+                <li><a href="{{route('register')}}">REGISTER</a></li>
+                
+                @endauth
+                
+                @endif
              </ul>
           </div>
        </div>
