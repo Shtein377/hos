@@ -68,6 +68,7 @@
                     <th>Тип пользователя</th>
                     <th>Изображение</th>
                     <th>Удалить</th>
+                    <th>Обновить</th>
 
 
                 </tr>
@@ -88,6 +89,10 @@
                         <td>
                             <a href="{{ url('delete_post', $post->id) }}" class="btn btn-danger"
                                 onclick="confirmation(event)">Удалить</a>
+                        </td>
+
+                        <td>
+                           <a href="{{url('edit_page',$post->id)}}" class="btn btn-success">Обновить</a> 
                         </td>
 
                     </tr>
